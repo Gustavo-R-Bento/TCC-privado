@@ -1,0 +1,172 @@
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+header > .barrasup{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 70px;
+    width: 90dvw;
+    max-width: 1200px;
+
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-image: linear-gradient(to right, #68328E, #522770,#44205e,#1D0E28);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 0px 4%;
+
+    
+}
+main{
+    margin-top: 120px;
+    max-width: 1445px;
+    list-style-type: none;
+    display: inline-block;
+    gap: 50px;
+    padding: 0px 10px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 14pt;
+}
+
+.logo{
+    flex: 1;
+}
+
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 22pt;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    list-style-type: none;
+    
+}
+.logo:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+.menu-desktop{
+    flex: 2;
+    text-align: center;
+}
+.menu-desktop ul{
+    margin: 0;
+    padding: 0;
+}
+.menu-desktop ul li{
+    margin: 0 20px;
+}
+.user {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.user:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+header a{
+    text-decoration: none;
+    color: #C1C5C7;
+    padding: 5px;
+    
+}
+
+header nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px 10px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 14pt;
+    
+    
+}
+
+.menu-desktop ul li a:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+    cursor: pointer;
+    color: #F7F7F7;
+
+}
+/*FIM BARRA SUPERIOR*/
+
+h1{
+    color: #6D6D6D;
+}
+
+.container{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 860px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.left p{
+    color: #6D6D6D;
+}
+
+.btn-cancelar{
+    width: 80px;
+    text-decoration: none;
+    background-color: #CE2B2B;
+    color: #F7F7F7;
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+.btn-cancelar:hover{
+    background-color: #a52323;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.agendamentos{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+
+.btn-agendar{
+    margin-top: 5px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    width: 80px;
+    height: 30px;
+    background-color: #522770;
+    color: #ffffff;
+    text-decoration: none;
+    
+}
+.btn-agendar:hover{
+    background-color: #522770;
+}

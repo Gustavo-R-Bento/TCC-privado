@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CPF format</title>
+<style>
+  input#cpf {
+    font-size: 16px;
+    padding: 8px 10px;
+    width: 200px;
+  }
+</style>
+</head>
+<body>
+
+<label for="cpf">CPF</label>
+<input id="cpf" type="text" inputmode="numeric" autocomplete="off"
+       placeholder="000.000.000-00" maxlength="14" />
+
+<script>
+(function () {
+  const input = document.getElementById('cpf');
+
+  function formatCPF(digits) {
+    if (!digits) return '';
+    if (digits.length <= 3) return digits;
+    if (digits.length <= 6) return digits.slice(0,3) + '.' + digits.slice(3);
+    if (digits.length <= 9) return digits.slice(0,3) + '.' + digits.slice(3,6) + '.' + digits.slice(6);
+    return digits.slice(0,3) + '.' + digits.slice(3,6) + '.' + digits.slice(6,9) + '-' + digits.slice(9,11);
+  }
+
+  function onInput(e) {
+    const el = e.target;
+
+    // contar quantos dígitos havia antes do caret
+    const before = el.value.slice(0, el.selectionStart);
+    const digitsBeforeCaret = (before.match(/\d/g) || []).length;
+
+    // extrair apenas dígitos e limitar a 11
+    let digits = el.value.replace(/\D/g, '').slice(0, 11);
+
+    // formatar
+    const formatted = formatCPF(digits);
+    el.value = formatted;
+
+    // posicionar caret: encontrar índice do char após o N-ésimo dígito
+    let targetDigitIndex = digitsBeforeCaret;
+    if (targetDigitIndex > digits.length) targetDigitIndex = digits.length;
+
+    let idx = 0, count = 0;
+    for (; idx < formatted.length; idx++) {
+      if (/\d/.test(formatted[idx])) count++;
+      if (count === targetDigitIndex) { idx++; break; } // move para depois desse dígito
+    }
+    if (targetDigitIndex === 0) idx = 0;
+    if (idx > formatted.length) idx = formatted.length;
+
+    // setSelectionRange pode falhar em alguns navegadores se o input não estiver focado;
+    // garantimos foco e aplicamos.
+    requestAnimationFrame(() => {
+      el.setSelectionRange(idx, idx);
+    });
+  }
+
+  function onPaste(e) {
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData('text');
+    const digits = (text.match(/\d/g) || []).join('').slice(0,11);
+    e.target.value = formatCPF(digits);
+
+    // posiciona no fim
+    requestAnimationFrame(() => {
+      e.target.setSelectionRange(e.target.value.length, e.target.value.length);
+    });
+  }
+
+  // evitar teclas não numéricas (permitir backspace, delete, setas, tab)
+  function onKeyDown(e) {
+    // teclas permitidas (navegação/edição): backspace(8), tab(9), delete(46), home(36), end(35), setas(37-40)
+    const allowedKeys = [8, 9, 35, 36, 37, 38, 39, 40, 46];
+    if (allowedKeys.includes(e.keyCode)) return;
+    // permitir números: tanto do teclado principal quanto do numpad
+    const isNumber = (e.key >= '0' && e.key <= '9');
+    if (!isNumber) e.preventDefault();
+  }
+
+  input.addEventListener('input', onInput);
+  input.addEventListener('paste', onPaste);
+  input.addEventListener('keydown', onKeyDown);
+
+  // opcional: ao perder o foco, validar comprimento
+  input.addEventListener('blur', () => {
+    const digits = input.value.replace(/\D/g, '');
+    if (digits && digits.length < 11) {
+      // aqui você pode mostrar uma mensagem de erro ou limpar o campo
+      // ex: console.warn('CPF incompleto');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    background-image: linear-gradient(to bottom, #eeeeee, #D9D9D9);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 410px;
+    height: 650px;
+    background-color: #ffffff;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 5px 5px 15px #00000025;
+
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 16pt;
+
+}
+p{
+    margin: 0;
+    text-align: center;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 8pt;
+}
+.txt-login{
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: medium;
+    font-style: normal;
+    font-size: 36pt;
+    color: #68328E;
+    text-align: center;
+}
+.input-doble{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+   
+}
+.input-left{
+    display: flex;
+    flex-direction: column;
+    
+}
+.input-right{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    
+}
+.input-center{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.inp-nome{
+    width: 120px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-sobrenome{
+    width: 140px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-email{
+    width: 285px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-cpf{
+    width: 130px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-tel{
+    width: 130px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-senha{
+    width: 285px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.toggle-senha{
+    position: relative;
+}
+.bibi-eye-slash{
+    margin-left: 265px;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    padding-top: 5px;
+}
+.bibi-eye{
+    margin-left: 265px;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    padding-top: 5px;
+}
+
+.input-btn{
+    padding: 15px;
+    padding-bottom: 50px;
+}
+
+input[type=submit]{
+
+    width: 285px;
+    height: 48px;
+    background-color: #68328E;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+input[type=submit]:hover{
+    background-color: #522770;
+}
