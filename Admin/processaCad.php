@@ -1,5 +1,6 @@
 <?php 
 require_once '../bd.php';
+session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -7,7 +8,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $dados =[
         $nome = ($_POST['nome']),
         $sobrenome = ($_POST['sobrenome']),
-        $endereco = ($_POST['endereco']),
         $cargo = $_POST['cargo'],
         $email = ($_POST['email']),
         $tel = ($_POST['tel']),
@@ -15,18 +15,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT),
         ];
 
-        $sql = "INSERT INTO funcionario (nome, sobrenome, email, tel, cpf, senha, endereco, cargo) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO funcionario (nome, sobrenome, email, tel, cpf, senha, cargo) VALUES (?,?,?,?,?,?,?)";
 
 
         $stmt = $connection->prepare($sql);
-        $stmt->bind_param("ssssssss", $nome, $sobrenome, $email, $tel, $cpf, $senha, $endereco, $cargo);
+        $stmt->bind_param("sssssss", $nome, $sobrenome, $email, $tel, $cpf, $senha, $cargo);
         if($stmt->execute()){
-            header('Location: ../Login/Login.php');
+            $_SESSION['mensagem_update'] = "Seu cadastro foi realizado com sucesso!";
+            header('Location: ./pagAdmin.php');
+           
             exit();
         }else{
             echo"Erro ao cadastrar" . $stmt->error;
         }
 
+        
         $stmt->close();
     }else{
        echo "Deu ruim!";

@@ -200,13 +200,52 @@ input[type=submit]:hover{
     flex-direction: column;
     background-color: white;
     min-width: 450px;
-    max-width: 1200px;
+    max-width: 1250px;
     min-height: 500px;
     border-radius: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 h1{
     color: #68328E;
 }
 
+.tabela-funcionarios{
+    background-color: #f0f0f0;
+    padding: 0px;
+    
+    border-collapse: collapse;
+    text-align: center;
+    
+}
+.tabela-funcionarios a{
+    text-decoration: none;
+}
+
+.tabela-funcionarios thead tr{
+    background-color: #a0a0a0;
+    
+}
+.tabela-funcionarios td{
+    padding: 12px;
+    color: #333;
+    
+}
+.tabela-funcionarios tbody tr:nth-child(2n){
+    background-color: #a0a0a0;
+}
+
+.bi-pencil{
+    background-color: rgb(11, 94, 215);
+    padding: 8px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.trash{
+    background-color: #CE2B2B;
+    padding: 4px 8px 3px 8px;
+    color: #ffffff;
+    border-radius: 5px;
+    
+}
     

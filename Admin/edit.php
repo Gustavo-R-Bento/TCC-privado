@@ -2,9 +2,17 @@
     require_once '../bd.php';
     session_start();
 
-    $id = $_GET['id'];
+    $id_funcionario = $_GET['id'];
+    $_SESSION['id_funcionario'] = $id_funcionario;
     $user = $_GET['user'];
     $dados = [];
+    $mensagem_update = "";
+
+    if(isset($_SESSION['mensagem_update'])){
+            
+            $mensagem_update = $_SESSION['mensagem_update'];
+            unset($_SESSION['mensagem_update']);
+    }
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
 </head>
 <body>
     <header>
@@ -50,7 +58,7 @@
         
         <div class="container">
             <?php
-                $sqlSelect = "SELECT * FROM funcionario WHERE id=$id";
+                $sqlSelect = "SELECT * FROM funcionario WHERE id='$id_funcionario'";
                 $resultadoSelect = $connection->query($sqlSelect);
                 while($dados = mysqli_fetch_assoc($resultadoSelect)){
             
@@ -58,7 +66,7 @@
             
             
                 <h1 class="txt-login">Editar</h1>
-                <form method="POST" action="processaCad.php">
+                <form method="POST" action="updateEdit.php">
             
                     <div class="labels">
                         <label for="nome">Nome</label>
@@ -74,13 +82,14 @@
                         <input type="text" name="sobrenome" id="sobrenome" class="inp-sobrenome" value="<?php echo $dados['sobrenome']; ?>" required>
                         <select name="cargo" id="cargo" class="inp-cargo" value="<?php $dados['cargo'] ?>">
                             <option value="manicure">Manicure</option>
-                            <option value="recepcionista">Rcepcionista</option>
+                            <option value="recepcionista">Recepcionista</option>
                         </select>
                         <input type="text" name="email" id="email" class="inp-email" value="<?php echo $dados['email']; ?>" required>
                         <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" value="<?php echo $dados['CPF']; ?>" required>
                         <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" value="<?php echo $dados['tel']; ?>" required>
                         
-                        <input type="submit" name="submit" value="Cadastrar" class="btn-cadastrar">
+                        
+                        <input type="submit" name="submit" value="Editar" class="btn-cadastrar">
             
                     </div>
             
@@ -89,6 +98,12 @@
                 }
             
             ?>
+            <?php if ($mensagem_update): ?>
+                    <div style="color: green; font-size: 10pt; padding-top: 10px;">
+                        <?php echo htmlspecialchars($mensagem_update); ?>
+                    </div>
+            <?php endif; ?> 
+            
         </div>
 
     </main>
