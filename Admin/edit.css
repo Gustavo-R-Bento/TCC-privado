@@ -128,12 +128,12 @@ form{
 .labels{
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 8px;
 }
 .inputs{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 input[type='text']{
@@ -160,6 +160,13 @@ input[type=submit]:hover{
     background-color: #522770;
 }
 .inp-class{
+    width: 180px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-cargo{
     width: 180px;
     height: 24px;
     border-radius: 5px;
@@ -193,7 +200,10 @@ input[type=submit]:hover{
     
 }
 
-.card{
+.txt-login{
+    color: #68328E;
+}
+.container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,8 +215,3 @@ input[type=submit]:hover{
     border-radius: 30px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-h1{
-    color: #68328E;
-}
-
-    

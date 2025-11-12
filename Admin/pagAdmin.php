@@ -66,7 +66,10 @@
             <div class="inputs">
                 <input type="text" name="nome" id="nome" class="inp-nome" required>
                 <input type="text" name="sobrenome" id="sobrenome" class="inp-sobrenome" required>
-                input
+                <select name="cargo" id="cargo" class="inp-class">
+                    <option value="manicure">Manicure</option>
+                    <option value="recepcionista">Recepcionista</option>
+                </select>
                 <input type="text" name="email" id="email" class="inp-email" required>
                 <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" required>
                 <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" required>  
