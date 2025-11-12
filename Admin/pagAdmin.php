@@ -48,66 +48,77 @@
         </div>
     </header>
     <main>
-        <form method="POST" action="processaCad.php">
+        
+        <div class="card">
             <h1 class="txt-login">Cadastro</h1>
-        
-            <div class="input-doble">
-                <div class="input-left">
-                    <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" class="inp-nome" required>
-                </div>
-                <div class="input-right">
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="sobrenome" class="inp-sobrenome" required>
-                </div>
-        
-            </div>
-            <div class="input-center">
-                <label for="endereco">Endereço</label>
-                <input type="text" name="endereco" id="endereco" class="inp-email" required>
-            </div>
-            <div class="input-center">
+            <form method="POST" action="processaCad.php">
+                
+            
+            <div class="labels">
+                <label for="nome">Nome</label>
+                <label for="sobrenome">Sobrenome</label>
                 <label for="cargo">Cargo</label>
-               <select name="cargo" id="cargo" class="inp-email" required>
-                    <option value="recepcionista">Recepcionista</option>
-                    <option value="manicure">Manicure</option>
-               </select>
-            </div>
-        
-            <div class="input-center">
                 <label for="email">E-mail</label>
-                <input type="text" name="email" id="email" class="inp-email" required>
-            </div>
-            <div class="input-doble">
-                <div class="input-left">
-                    <label for="cpf">CPF</label>
-                    <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" required>
-                </div>
-        
-                <div class="input-right">
-                    <label for="tel">Telefone</label>
-                    <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" required>
-                </div>
-            </div>
-        
-            <div class="input-center">
+                <label for="cpf">CPF</label>
+                <label for="tel">Telefone</label>
                 <label for="senha">Senha</label>
-                <span class="toggle-senha" id="toggleIconContainer" onclick="togglePassword()">     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bibi-eye-slash" viewBox="0 0 16 16">
-                    <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
-                    <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
-                    <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
-                </svg></span>
-                <input type="password" name="senha" id="senha" class="inp-senha" require>
-        
             </div>
-        
-        
-            <div class="input-btn">
+            <div class="inputs">
+                <input type="text" name="nome" id="nome" class="inp-nome" required>
+                <input type="text" name="sobrenome" id="sobrenome" class="inp-sobrenome" required>
+                input
+                <input type="text" name="email" id="email" class="inp-email" required>
+                <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" required>
+                <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" required>  
+                <span class="toggle-senha" id="toggleIconContainer" onclick="togglePassword()">     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bibi-eye-slash" viewBox="0 0 16 16">
+                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+                <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+                </svg></span> 
+                <input type="password" name="senha" id="senha" class="inp-senha" require>
+                
                 <input type="submit" name="submit" value="Cadastrar" class="btn-cadastrar">
+            
             </div>
             
-        </form>
+            </form>
+        </div>
+
     </main>
-    
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+
+<script>
+    $('#cpf').mask('000.000.000-00', {reverse: true});
+    $('#tel').mask('(00) 0 0000-0000');
+
+    const eyeOpen = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bibi-eye" viewBox="0 0 16 16">
+            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
+            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
+            </svg>`;
+
+    const eyeClose = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16"   height="16" fill="currentColor" class="bibi-eye-slash" viewBox="0 0 16 16">
+            <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z"/>
+            <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829"/>
+            <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z"/>
+            </svg>
+            `;
+
+    function togglePassword(){
+        const senhaInput = document.getElementById('senha');
+        const container = document.getElementById('toggleIconContainer');
+
+        if(senhaInput.type === 'password'){
+            senhaInput.type = 'text';
+            container.innerHTML = eyeOpen;
+        }else{
+            senhaInput.type = 'password';
+            container.innerHTML = eyeClose;
+        }
+
+    }
+</script>
 </body>
 </html>

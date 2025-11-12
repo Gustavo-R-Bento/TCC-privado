@@ -34,6 +34,10 @@ header > .barrasup{
 
     
 }
+main{
+    margin: 0;
+    max-width: 1445px;
+}
 
 .logo{
     flex: 1;
@@ -114,28 +118,58 @@ main{
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-    font-size: 14pt; 
+    font-size: 14pt;
 
 }
-
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    
+}
 form{   
     display: flex; 
     flex-direction: row;
     gap: 10px;
-    background-color: white;
     
 }
 .labels{
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 12px;
 }
 .inputs{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+.container{
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    padding: 20px;
 
+}
 input[type='text']{
     width: 180px;
     height: 24px;
@@ -159,47 +193,32 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #522770;
 }
-.inp-senha{
+.btn-sair{
+    width: 80%;
+    text-decoration: none;
+    text-align: center;
+    background-color: #CE2B2B;
+    color: #F7F7F7;
+    padding: 10px;
+    border-radius: 15px;
+}
+.btn-sair:hover{
+    background-color: #a52323;
+}
+.btn-foto{
     width: 180px;
-    height: 24px;
-    border-radius: 5px;
+    height: 30px;
+    background-color: #68328E;
+    font-size: 1em;
+    color: white;
     border: none;
-    background-color: #D9D9D9;
-}
-.toggle-senha{
-    position: relative;
-}
-.bibi-eye-slash{
-    margin-left: 160px;
-    margin-top: 15px;
-    position: absolute;
+    border-radius: 8px;
     cursor: pointer;
-    user-select: none;
-    
+
 }
-.bibi-eye{
-    margin-left: 160px;
-    margin-top: 15px;
-    position: absolute;
-    cursor: pointer;
-    user-select: none;
-    
+.btn-foto:hover{
+    background-color: #522770;
 }
 
-.card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: white;
-    min-width: 450px;
-    max-width: 1200px;
-    min-height: 500px;
-    border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-h1{
-    color: #68328E;
-}
 
     
