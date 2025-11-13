@@ -12,14 +12,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $email = ($_POST['email']);
             $tel = ($_POST['tel']);
             $cpf = ($_POST['cpf']);
-            $id_funcionario = $_SESSION['id_funcionario'];
+            $id_usuario = $_SESSION['id_usuario'];
             
         $id_user = $_SESSION['id'];
 
-        $sqlUpdate = "UPDATE funcionario SET nome = ?, sobrenome = ?, cargo = ?, email = ?, tel = ?, cpf = ? WHERE id = ?";
+        $sqlUpdate = "UPDATE usuario SET nome = ?, sobrenome = ?, email = ?, tel = ?, cpf = ? WHERE id = ?";
 
         $stmt = $connection->prepare($sqlUpdate);
-        $stmt->bind_param("ssssssi", $nome, $sobrenome, $cargo, $email, $tel, $cpf, $id_funcionario);
+        $stmt->bind_param("sssssi", $nome, $sobrenome, $email, $tel, $cpf, $id_funcionario);
         $resultado = $stmt->execute();
 
         if($resultado){
@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['mensagem_update'] = "Erro ao alterar dados: " . $stmt->error;
         }
 
-        header("Location: ./edit.php?id_funcionario=$id_funcionario&user=0");
+        header("Location: ./edit.php?id_usuario=$id_usuario&user=0");
     }else{
         $_SESSION ['mensagem_update'] = "Não foi possível alterar seus dados.";
         header('Location: funcionarios.php');

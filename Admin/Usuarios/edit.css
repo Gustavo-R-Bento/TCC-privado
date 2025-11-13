@@ -1,0 +1,217 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #eeeeee, #D9D9D9);
+    
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    min-height: 100dvh;
+    
+}
+
+/*BARRA SUPERIOR*/
+
+header > .barrasup{
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 70px;
+    width: 90dvw;
+    max-width: 1200px;
+
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-image: linear-gradient(to right, #68328E, #522770,#44205e,#1D0E28);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 0px 4%;
+
+    
+}
+
+.logo{
+    flex: 1;
+}
+
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 22pt;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    list-style-type: none;
+    
+}
+.logo:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+.menu-desktop{
+    flex: 2;
+    text-align: center;
+}
+.menu-desktop ul{
+    margin: 0;
+    padding: 0;
+}
+.menu-desktop ul li{
+    margin: 0 20px;
+}
+.user {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+.user:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+header a{
+    text-decoration: none;
+    color: #a0a0a0;
+    padding: 5px;
+    
+}
+
+header nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px 10px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 14pt;
+    
+    
+}
+
+.menu-desktop ul li a:hover{
+    transform: scale(1.05);
+    transition: 0.2s;
+    cursor: pointer;
+    color: #F7F7F7;
+
+}
+/*FIM BARRA SUPERIOR*/
+main{
+    margin-top: 120px;
+    max-width: 1445px;
+    list-style-type: none;
+    display: inline-block;
+    gap: 50px;
+    padding: 0px 10px;
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-size: 14pt; 
+
+}
+
+form{   
+    display: flex; 
+    flex-direction: row;
+    gap: 10px;
+    background-color: white;
+    
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+input[type='text']{
+    width: 180px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+    
+}
+input[type=submit]{
+
+    width: 180px;
+    height: 30px;
+    background-color: #68328E;
+    font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+input[type=submit]:hover{
+    background-color: #522770;
+}
+.inp-class{
+    width: 180px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-cargo{
+    width: 180px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.inp-senha{
+    width: 180px;
+    height: 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D9D9D9;
+}
+.toggle-senha{
+    position: relative;
+}
+.bibi-eye-slash{
+    margin-left: 160px;
+    margin-top: 15px;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    
+}
+.bibi-eye{
+    margin-left: 160px;
+    margin-top: 15px;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    
+}
+
+.txt-login{
+    color: #68328E;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    min-width: 450px;
+    max-width: 1200px;
+    min-height: 500px;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}

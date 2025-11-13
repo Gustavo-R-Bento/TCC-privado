@@ -2,10 +2,10 @@
     require_once '../../bd.php';
     session_start();
 
+    $id_usuario = [];
     $user = $_GET['user'];
-    $id_funcionario = [];
-    $id_funcionario = $_GET['id_funcionario'];
-    $_SESSION['id_funcionario'] = $id_funcionario;
+    $id_usuario = $_GET['id_usuario'];
+    $_SESSION['id_usuario'] = $id_usuario;
     
     $dados = [];
     $mensagem_update = "";
@@ -39,8 +39,8 @@
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="../Cadastro/pagAdmin.php">Cadastro</a></li>
-                    <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
-                    <li><a href="./funcionarios.php">Funcionários</a></li>
+                    <li><a href="./usuarios.php">Usuários</a></li>
+                    <li><a href="../Funcionarios/funcionarios.php">Funcionários</a></li>
                 </ul>
             </nav>
 
@@ -60,7 +60,7 @@
         
         <div class="container">
             <?php
-                $sqlSelect = "SELECT * FROM funcionario WHERE id=$id_funcionario";
+                $sqlSelect = "SELECT * FROM usuario WHERE id='$id_usuario'";
                 $resultadoSelect = $connection->query($sqlSelect);
                 while($dados = mysqli_fetch_assoc($resultadoSelect)){
             
@@ -73,7 +73,7 @@
                     <div class="labels">
                         <label for="nome">Nome</label>
                         <label for="sobrenome">Sobrenome</label>
-                        <label for="cargo">Cargo</label>
+                        
                         <label for="email">E-mail</label>
                         <label for="cpf">CPF</label>
                         <label for="tel">Telefone</label>
@@ -82,10 +82,7 @@
                     <div class="inputs">
                         <input type="text" name="nome" id="nome" class="inp-nome" value="<?php echo $dados['nome']; ?>" required>
                         <input type="text" name="sobrenome" id="sobrenome" class="inp-sobrenome" value="<?php echo $dados['sobrenome']; ?>" required>
-                        <select name="cargo" id="cargo" class="inp-cargo" value="<?php $dados['cargo'] ?>">
-                            <option value="manicure">Manicure</option>
-                            <option value="recepcionista">Recepcionista</option>
-                        </select>
+                        
                         <input type="text" name="email" id="email" class="inp-email" value="<?php echo $dados['email']; ?>" required>
                         <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" value="<?php echo $dados['CPF']; ?>" required>
                         <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" value="<?php echo $dados['tel']; ?>" required>
