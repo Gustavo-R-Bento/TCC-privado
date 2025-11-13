@@ -1,5 +1,5 @@
 <?php 
-require_once '../bd.php';
+require_once '../../bd.php';
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

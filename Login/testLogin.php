@@ -24,7 +24,7 @@
             
 
             if($_SESSION['is_admin'] > 0){
-                header('Location: ../Admin/pagAdmin.php');
+                header('Location: ../Admin/Cadastro/pagAdmin.php');
                 exit();
             }
             

@@ -1,10 +1,10 @@
 <?php 
-    require_once '../bd.php';
+    require_once '../../bd.php';
     session_start();
 
-    $id_funcionario = $_GET['id'];
-    $_SESSION['id_funcionario'] = $id_funcionario;
     $user = $_GET['user'];
+    $id_funcionario = $_GET['id_funcionario'];
+    
     $dados = [];
     $mensagem_update = "";
 
@@ -36,8 +36,8 @@
 
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="./pagAdmin.php">Cadastro</a></li>
-                    <li><a href="./usuarios.php">Usuários</a></li>
+                    <li><a href="../Cadastro/pagAdmin.php">Cadastro</a></li>
+                    <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                     <li><a href="./funcionarios.php">Funcionários</a></li>
                 </ul>
             </nav>
@@ -88,6 +88,12 @@
                         <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" value="<?php echo $dados['CPF']; ?>" required>
                         <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" value="<?php echo $dados['tel']; ?>" required>
                         
+                         <?php if ($mensagem_update): ?>
+                                <div style="color: green; font-size: 10pt; padding-top: 10px;">
+                                    <?php echo htmlspecialchars($mensagem_update); ?>
+                                </div>
+                        <?php endif; ?> 
+                        
                         
                         <input type="submit" name="submit" value="Editar" class="btn-cadastrar">
             
@@ -98,12 +104,7 @@
                 }
             
             ?>
-            <?php if ($mensagem_update): ?>
-                    <div style="color: green; font-size: 10pt; padding-top: 10px;">
-                        <?php echo htmlspecialchars($mensagem_update); ?>
-                    </div>
-            <?php endif; ?> 
-            
+           
         </div>
 
     </main>

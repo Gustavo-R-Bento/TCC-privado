@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once "../bd.php";
+    require_once "../../bd.php";
 
     $mensagem_update = "";
 
@@ -34,8 +34,8 @@
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="./pagAdmin.php">Cadastro</a></li>
-                    <li><a href="./usuarios.php">Usuários</a></li>
-                    <li><a href="./funcionarios.php">Funcionários</a></li>
+                    <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
+                    <li><a href="../Funcionarios/funcionarios.php">Funcionários</a></li>
                 </ul>
             </nav>
 
