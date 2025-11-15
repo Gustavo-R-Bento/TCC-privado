@@ -2,8 +2,14 @@
     require_once '../../bd.php';
     session_start();
 
-    $sql = "SELECT * FROM funcionario ORDER by id ASC";
-    $resultado = $connection->query($sql);
+    if(!empty($_GET['search'])){
+        $search = $_GET['search'];
+        $sql = "SELECT * FROM funcionario WHERE id LIKE '%$search%' or nome LIKE '%$search%' or sobrenome LIKE '%$search%' or email LIKE '%$search%' ORDER BY id ASC";
+        $resultado = $connection->query($sql);
+    }else{
+        $sql = "SELECT * FROM funcionario ORDER by id ASC";
+        $resultado = $connection->query($sql);
+    }
     
 ?>
 <!DOCTYPE html>
@@ -49,6 +55,14 @@
     </header>
     <main>
         <div class="card">
+            <div class="bar-search">
+                <input type="search" name="search" id="search" class="search" placeholder="Pesquisar">
+                <button class="btn-search" onclick="searchData()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>      
+                </button>
+            </div>
             <h1>Lista de funcionarios</h1>
             <table class="tabela-funcionarios">
                 <thead>
@@ -97,6 +111,17 @@
     </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+    var search = document.getElementById('search');
+    search.addEventListener("keydown", function(event){
+        if (event.key === "Enter"){
+            searchData();
+        }
+    })
+    function searchData(){
+        window.location = 'funcionarios.php?search='+search.value;
+    }
+</script>
 
 </body>
 </html>
