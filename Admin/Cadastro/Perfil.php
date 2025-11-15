@@ -1,33 +1,34 @@
 <?php 
-    require_once '../../bd.php';
     session_start();
-
-    $id_usuario = [];
-    $user = $_GET['user'];
-    $id_usuario = $_GET['id_usuario'];
-    $_SESSION['id_usuario'] = $id_usuario;
+    require_once "../../bd.php";
     
-    $dados = [];
-    $mensagem_update = "";
+    $id_user = $_SESSION['id'];
+    if(!empty($id_user)){
 
-    if(isset($_SESSION['mensagem_update'])){
-            
+        $sql = "SELECT * FROM usuario WHERE id=$id_user";
+        $resultado = $connection->query($sql);
+        $dados = mysqli_fetch_assoc($resultado);
+        $mensagem_update = null;
+
+        if(isset($_SESSION['mensagem_update'])){
             $mensagem_update = $_SESSION['mensagem_update'];
             unset($_SESSION['mensagem_update']);
-    }
+        }
 
+    }else{
+        header('Location: ../Login/Login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Nail</title>
-    <link rel="stylesheet" href="edit.css">
+    <title>Pixel nail</title>
+    <link rel="stylesheet" href="Perfil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <header>
@@ -38,14 +39,14 @@
 
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="../Cadastro/pagAdmin.php">Cadastro</a></li>
-                    <li><a href="./usuarios.php">Usuários</a></li>
+                    <li><a href="./pagAdmin.php">Cadastro</a></li>
+                    <li><a href="../Usuarios/usuarios.php">Usuários</a></li>
                     <li><a href="../Funcionarios/funcionarios.php">Funcionários</a></li>
                 </ul>
             </nav>
 
             <div class="user">
-                <a href="../Cadastro/Perfil.php">
+                <a href="./Perfil.php">
                     <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
@@ -57,55 +58,47 @@
         </div>
     </header>
     <main>
-        
+        <h2>Seus dados</h2>
         <div class="container">
-            <?php
-                $sqlSelect = "SELECT * FROM usuario WHERE id='$id_usuario'";
-                $resultadoSelect = $connection->query($sqlSelect);
-                while($dados = mysqli_fetch_assoc($resultadoSelect)){
-            
-            ?>
-            
-            
-                <h1 class="txt-login">Editar</h1>
+            <div class="left">
+                <img src="../../img/user.png" alt="" srcset="">
+                <button class="btn-foto">Alterar</button>
+            </div>
+
+            <div class="right">
                 <form method="POST" action="updateEdit.php">
-            
+
                     <div class="labels">
                         <label for="nome">Nome</label>
                         <label for="sobrenome">Sobrenome</label>
-                        
                         <label for="email">E-mail</label>
                         <label for="cpf">CPF</label>
                         <label for="tel">Telefone</label>
-                        
                     </div>
                     <div class="inputs">
                         <input type="text" name="nome" id="nome" class="inp-nome" value="<?php echo $dados['nome']; ?>" required>
                         <input type="text" name="sobrenome" id="sobrenome" class="inp-sobrenome" value="<?php echo $dados['sobrenome']; ?>" required>
-                        
                         <input type="text" name="email" id="email" class="inp-email" value="<?php echo $dados['email']; ?>" required>
                         <input type="text" name="cpf" id="cpf" class="inp-cpf" maxlength="15" value="<?php echo $dados['CPF']; ?>" required>
                         <input type="text" name="tel" id="tel" class="inp-tel" maxlength="18" value="<?php echo $dados['tel']; ?>" required>
+                        <input type="submit" name="submit" value="Alterar" class="btn-cadastrar">
                         
-                         <?php if ($mensagem_update): ?>
-                                <div style="color: green; font-size: 10pt; padding-top: 10px;">
-                                    <?php echo htmlspecialchars($mensagem_update); ?>
-                                </div>
-                        <?php endif; ?> 
-                        
-                        
-                        <input type="submit" name="submit" value="Editar" class="btn-cadastrar">
-            
-                    </div>
-            
+                    </div>         
+                      
+                                                                               
+                    
                 </form>
-            <?php
-                }
-            
-            ?>
-           
-        </div>
 
+                <?php if ($mensagem_update): ?>
+                    <div style="color: green; font-size: 10pt; padding-top: 10px;">
+                        <?php echo htmlspecialchars($mensagem_update); ?>
+                    </div>
+                <?php endif; ?>  
+
+                <a href="./sair.php" class="btn-sair">Sair</a>
+
+            </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
@@ -143,4 +136,4 @@
         }
     </script>
 </body>
-</html>
+</html> 
