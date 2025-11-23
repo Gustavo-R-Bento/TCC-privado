@@ -3,7 +3,7 @@
 require_once '../bd.php'; 
 date_default_timezone_set('America/Cuiaba'); 
 
-$horarios_master = ['07:00:00', '08:00:00', '09:00:00', '10:00:00', '13:00:00', '14:00:00', '15:00:00', '16:00:00']; 
+$horarios_master = ['07:00', '08:00', '09:00', '10:00', '13:00', '14:00', '15:00', '16:00']; 
 
 header('Content-Type: application/json');
 

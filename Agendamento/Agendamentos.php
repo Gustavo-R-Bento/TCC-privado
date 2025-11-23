@@ -62,8 +62,9 @@
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="../Inicio/Inicio.php">Início</a></li>
+                    <li><a href="../Agendar/Agendar.php">Agendar</a></li>
                     <li><a href="../Agendamento/Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="#">Quem somos?</a></li>
+                    <li><a href="../Inicio/Inicio.php#secao-quem-somos">Quem somos?</a></li>
                 </ul>
             </nav>
 

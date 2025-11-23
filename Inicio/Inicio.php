@@ -27,8 +27,9 @@
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="../Inicio/Inicio.php">Início</a></li>
+                    <li><a href="../Agendar/Agendar.php">Agendar</a></li>
                     <li><a href="../Agendamento/Agendamentos.php">Agendamentos</a></li>
-                    <li><a href="">Quem somos?</a></li>
+                    <li><a href="./Inicio.php#secao-quem-somos">Quem somos?</a></li>
                 </ul>
             </nav>
 
@@ -85,14 +86,16 @@
             
         
         </section>
-        <div class="quem-somos">
-                    <h2>Quem somos?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quod ipsa enim accusantium doloribus, blanditiis officia, tenetur minus repellat accusamus magnam corrupti placeat? Molestias maiores enim voluptas voluptate accusantium animi.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod vitae eos natus expedita illo quae rem quasi tempora, cum qui commodi fugiat, accusantium dolore voluptate doloremque deleniti at eaque adipisci!
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi eaque adipisci possimus a necessitatibus iure, libero assumenda. Esse veniam, perspiciatis commodi voluptates odio expedita quo sapiente eaque repudiandae enim maxime.
-                    
-                    </p>
-            </div>
+        <div id="secao-quem-somos">
+            <div class="quem-somos">
+                        <h2>Quem somos?</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quod ipsa enim accusantium doloribus, blanditiis officia, tenetur minus repellat accusamus magnam corrupti placeat? Molestias maiores enim voluptas voluptate accusantium animi.
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod vitae eos natus expedita illo quae rem quasi tempora, cum qui commodi fugiat, accusantium dolore voluptate doloremque deleniti at eaque adipisci!
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi eaque adipisci possimus a necessitatibus iure, libero assumenda. Esse veniam, perspiciatis commodi voluptates odio expedita quo sapiente eaque repudiandae enim maxime.
+            
+                        </p>
+                </div>
+        </div>
         
     
         <div class="linha"></div>
