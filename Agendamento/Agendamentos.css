@@ -3,6 +3,7 @@ body{
     align-content: center;
     justify-content: center;
     background-image: linear-gradient(to bottom, #eeeeee, #D9D9D9);
+    height: 100dvh;
     
 }
 
@@ -121,6 +122,7 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     padding: 20px;
+    background-color: #ffffff;
 
 }
 .left p{
