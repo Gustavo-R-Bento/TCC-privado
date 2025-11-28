@@ -60,7 +60,7 @@
         
         <div class="container">
             <?php
-                $sqlSelect = "SELECT * FROM usuario WHERE id='$id_usuario'";
+                $sqlSelect = "SELECT * FROM usuario WHERE id=$id_usuario";
                 $resultadoSelect = $connection->query($sqlSelect);
                 while($dados = mysqli_fetch_assoc($resultadoSelect)){
             

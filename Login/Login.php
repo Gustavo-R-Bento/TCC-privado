@@ -6,6 +6,12 @@
         $mensagem_erro = $_SESSION['erro_login'];
         unset($_SESSION['erro_login']);
     }
+    $mensagem_cadastro = "";
+    if(isset($_GET['mensagem_cadastro'])){
+    
+        $mensagem_cadastro = $_GET['mensagem_cadastro'];
+        unset($_GET['mensagem_cadastro']);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +54,11 @@
                         <?php echo htmlspecialchars($mensagem_erro); ?>
                     </div>
                 <?php endif; ?>
+                <?php if($mensagem_cadastro){ ?>
+                    <div style="color: green; font-size: 10pt; padding-top: 10px;">
+                        <?php echo htmlspecialchars($mensagem_cadastro); ?>
+                    </div>
+                <?php } ?> 
                 
             </div>
             

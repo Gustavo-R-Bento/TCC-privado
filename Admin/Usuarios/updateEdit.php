@@ -8,7 +8,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
             $nome = ($_POST['nome']);
             $sobrenome = ($_POST['sobrenome']);
-            $cargo = $_POST['cargo'];
             $email = ($_POST['email']);
             $tel = ($_POST['tel']);
             $cpf = ($_POST['cpf']);
@@ -19,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $sqlUpdate = "UPDATE usuario SET nome = ?, sobrenome = ?, email = ?, tel = ?, cpf = ? WHERE id = ?";
 
         $stmt = $connection->prepare($sqlUpdate);
-        $stmt->bind_param("sssssi", $nome, $sobrenome, $email, $tel, $cpf, $id_funcionario);
+        $stmt->bind_param("sssssi", $nome, $sobrenome, $email, $tel, $cpf, $id_usuario);
         $resultado = $stmt->execute();
 
         if($resultado){

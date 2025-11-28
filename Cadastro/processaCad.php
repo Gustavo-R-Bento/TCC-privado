@@ -19,7 +19,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $stmt = $connection->prepare($sql);
         $stmt->bind_param("ssssss", $nome, $sobrenome, $email, $tel, $cpf, $senha);
         if($stmt->execute()){
-            header('Location: ../Login/Login.php');
+            $mensagem_cadastro = "Seu cadastro foi efetuado com sucesso!";
+            header("Location: ../Login/Login.php?mensagem_cadastro=$mensagem_cadastro");
             exit();
         }else{
             echo"Erro ao cadastrar" . $stmt->error;
